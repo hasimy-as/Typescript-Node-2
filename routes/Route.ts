@@ -7,8 +7,7 @@ Route.get("/login", (req, res) => res.render("login"));
 Route.get("/register", (req, res) => res.render("register"));
 
 Route.get("/", (req: Request, res: Response) => {
-  if (req.session) {
-    req.session.loggedin = true;
+  if (req!.session!.loggedin) {
     res.end("<h1>You've logged in!</h1>");
   } else {
     console.log("Gotta login first!");
